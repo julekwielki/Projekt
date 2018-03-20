@@ -74,7 +74,7 @@ public class Start extends JFrame implements ActionListener{
 		start.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Game test = new Game(language);
+				Game test = new Game();
 				test.setVisible (true);
 				dispose();
 			}
