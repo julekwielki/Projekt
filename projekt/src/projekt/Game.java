@@ -6,13 +6,16 @@ import java.awt.HeadlessException;
 import javax.swing.JFrame;
 
 public class Game extends JFrame{
+	
+	static int language;
 
 	private static final long serialVersionUID = 1L;
-	public Game () throws HeadlessException {
+	public Game (int a) throws HeadlessException {
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH); 
 		//this.setUndecorated(true);
 		this.setLayout(new BorderLayout());
+		language = a;
 		
 		ServicePanel leftPanel = new ServicePanel();
 		getContentPane().setBackground(new Color(102,255,237,255));
@@ -39,7 +42,7 @@ public class Game extends JFrame{
 		
 	}
 	public static void main(String[] args) {
-		Game frame = new Game();
+		Game frame = new Game(language);
 		frame.setVisible(true);
 	}
 
