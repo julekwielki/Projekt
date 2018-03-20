@@ -14,9 +14,10 @@ public class End extends JFrame{
 
 	private static final long serialVersionUID = 1L;
 	public End () throws HeadlessException {
+		
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		this.setExtendedState(JFrame.MAXIMIZED_BOTH); 
-		this.setUndecorated(true);
+		this.setSize(500,500);	
+		this.setLocationRelativeTo(null);
 	
 		JPanel panel=new JPanel();
 		add(BorderLayout.CENTER,panel);

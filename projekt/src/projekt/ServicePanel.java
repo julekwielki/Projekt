@@ -26,7 +26,7 @@ public class ServicePanel extends JPanel implements ActionListener{
 	public ServicePanel() {
 		this.setSize(300, 600);
 		this.setLayout(new GridLayout(5,1));
-		mainColor = new Color(37,250,215,114);
+		mainColor = new Color(102,255,237,255);
 		this.setBackground(mainColor);
 		
 	//przycisk startowy
