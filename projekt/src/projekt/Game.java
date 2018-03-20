@@ -3,23 +3,26 @@ package projekt;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.HeadlessException;
+
 import javax.swing.JFrame;
 
 public class Game extends JFrame{
 	
-	static int language;
+	static int language =1;
 
 	private static final long serialVersionUID = 1L;
-	public Game (int a) throws HeadlessException {
+	public Game () throws HeadlessException {
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH); 
 		//this.setUndecorated(true);
 		this.setLayout(new BorderLayout());
-		language = a;
 		
 		ServicePanel leftPanel = new ServicePanel();
+		AnimationPanel rightPanel = new AnimationPanel();
 		getContentPane().setBackground(new Color(102,255,237,255));
 		add(BorderLayout.WEST, leftPanel);
+		add(BorderLayout.CENTER, rightPanel);
+	
 
 		
 		//Po przegraniu otwiera siê nowa ramka 
@@ -42,7 +45,7 @@ public class Game extends JFrame{
 		
 	}
 	public static void main(String[] args) {
-		Game frame = new Game(language);
+		Game frame = new Game();
 		frame.setVisible(true);
 	}
 
