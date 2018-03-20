@@ -14,20 +14,19 @@ import javax.swing.event.ChangeListener;
 
 public class ServicePanel extends JPanel implements ActionListener{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	JButton start,end;
 	JSlider velocity, angle;
 	JLabel informations;
-	Color mainColor;
 
 	public ServicePanel() {
 		this.setSize(300, 600);
 		this.setLayout(new GridLayout(5,1));
-		mainColor = new Color(102,255,237,255);
-		this.setBackground(mainColor);
+		this.setBackground(new Color(102,255,237,255));
+		
+	//informacje
+		informations = new JLabel();
+		informations.setText("Ustaw wybrane wartoœci pocz¹tkowe i podejmij wyzwanie trafienia w cel.");
 		
 	//przycisk startowy
 		
@@ -56,7 +55,7 @@ public class ServicePanel extends JPanel implements ActionListener{
 	//slider kata poczatkowego
 		
 		angle = new JSlider(JSlider.HORIZONTAL, 0, 89, 45);
-		angle.setBackground(mainColor);
+		angle.setBackground(new Color(102,255,237,255));
 		angle.setMajorTickSpacing(10);
 		angle.setPaintTicks(true);
 		
@@ -71,8 +70,8 @@ public class ServicePanel extends JPanel implements ActionListener{
 	//slider predkosci poczatkowej
 
 		velocity = new JSlider(JSlider.HORIZONTAL, 0, 10, 5);
-		velocity.setBackground(new Color(0,0,0,0));
-		velocity.setMajorTickSpacing(10);
+		velocity.setBackground(new Color(102,255,237,255));
+		velocity.setMajorTickSpacing(1);
 		velocity.setPaintTicks(true);
 		
 		ChangeListener velocityListener = new ChangeListener() {
@@ -82,7 +81,7 @@ public class ServicePanel extends JPanel implements ActionListener{
 		};		
 		velocity.addChangeListener(velocityListener);
 		
-		
+		this.add(informations);
 		this.add(start);
 		this.add(angle);
 		this.add(velocity);
